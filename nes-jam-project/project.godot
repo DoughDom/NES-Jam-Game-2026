@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="NES Jam Game"
+run/main_scene="uid://genh1aywmbk0"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=256
+window/size/viewport_height=240
 
 [physics]
 
