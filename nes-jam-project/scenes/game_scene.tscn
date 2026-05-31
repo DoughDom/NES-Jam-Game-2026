@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bp7i7gf0soe7g"]
+
+[ext_resource type="Script" uid="uid://hydybbnr1b32" path="res://scenes/scenes_scripts/game_scene.gd" id="1_w5aja"]
+
+[sub_resource type="GDScript" id="GDScript_onqr8"]
+script/source = "extends Node
+class_name EventHandler
+
+signal changeScene
+signal resetScene
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="GameScene" type="Node2D" unique_id=1078839567]
+script = ExtResource("1_w5aja")
+
+[node name="Events" type="Node" parent="." unique_id=1689376629]
+script = SubResource("GDScript_onqr8")
