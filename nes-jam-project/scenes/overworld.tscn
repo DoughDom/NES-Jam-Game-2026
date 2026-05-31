@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bp7i7gf0soe7g"]
+
+[ext_resource type="Script" uid="uid://hydybbnr1b32" path="res://scenes/scenes_scripts/game_scene.gd" id="1_m1b5j"]
+[ext_resource type="Texture2D" uid="uid://dqwx5moesm6os" path="res://New Piskel.png" id="2_16ktt"]
+
+[sub_resource type="TileSet" id="TileSet_m1b5j"]
+
+[node name="Overworld" type="Node2D" unique_id=1078839567]
+script = ExtResource("1_m1b5j")
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1477844492]
+tile_set = SubResource("TileSet_m1b5j")
+format = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1756903158]
+
+[node name="NewPiskel" type="Sprite2D" parent="." unique_id=514836477]
+texture_filter = 1
+position = Vector2(33, 49)
+texture = ExtResource("2_16ktt")
