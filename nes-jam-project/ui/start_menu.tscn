@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bdem7ehsbdtio"]
+
+[ext_resource type="Texture2D" uid="uid://tjm3gn5napn3" path="res://assets/visual_assets/demo_title.png" id="1_jwbto"]
+
+[node name="startMenu" type="Control" unique_id=1678668570]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+
+[node name="menuButtonContainer" type="VBoxContainer" parent="." unique_id=649574046]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 0
+offset_left = 24.0
+offset_top = 184.0
+offset_right = 64.0
+offset_bottom = 216.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="start" type="Button" parent="menuButtonContainer" unique_id=764812303]
+layout_mode = 2
+
+[node name="options" type="Button" parent="menuButtonContainer" unique_id=735115810]
+layout_mode = 2
+
+[node name="quit" type="Button" parent="menuButtonContainer" unique_id=500672043]
+layout_mode = 2
+
+[node name="title" type="Sprite2D" parent="." unique_id=522230783]
+texture_filter = 1
+position = Vector2(128, 120)
+texture = ExtResource("1_jwbto")
