@@ -16,28 +16,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer" unique_id=972251143]
+[node name="decision_container" type="GridContainer" parent="VBoxContainer" unique_id=972251143]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 10
 columns = 2
 
-[node name="Button" type="Button" parent="VBoxContainer/GridContainer" unique_id=1362820982]
+[node name="Button" type="Button" parent="VBoxContainer/decision_container" unique_id=1362820982]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button2" type="Button" parent="VBoxContainer/GridContainer" unique_id=556159427]
+[node name="Button2" type="Button" parent="VBoxContainer/decision_container" unique_id=556159427]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button3" type="Button" parent="VBoxContainer/GridContainer" unique_id=1841690079]
+[node name="Button3" type="Button" parent="VBoxContainer/decision_container" unique_id=1841690079]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button4" type="Button" parent="VBoxContainer/GridContainer" unique_id=1936148944]
+[node name="Button4" type="Button" parent="VBoxContainer/decision_container" unique_id=1936148944]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
