@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c32qjeq7qvpcx"]
+
+[ext_resource type="Script" uid="uid://bubqnycdt80ic" path="res://entities/entities_scripts/parent_enemy.gd" id="1_reqc8"]
+
+[node name="parent_enemy" type="CharacterBody2D" unique_id=1088933108]
+script = ExtResource("1_reqc8")
+
+[node name="enemy_sprite" type="Sprite2D" parent="." unique_id=2078795458]
+
+[node name="enemy_animations" type="AnimationPlayer" parent="." unique_id=1022538572]
+
+[node name="vision_cone" type="Node2D" parent="." unique_id=1806511902]
+
+[node name="enemy_detection" type="Area2D" parent="vision_cone" unique_id=81787521]
+
+[node name="detection_range" type="CollisionShape2D" parent="vision_cone/enemy_detection" unique_id=542094477]
