@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="NES Jam Game"
-run/main_scene="uid://genh1aywmbk0"
+run/main_scene="uid://celgno2qpdgd6"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -25,7 +25,6 @@ window/size/viewport_width=1024
 window/size/viewport_height=896
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
-window/vsync/vsync_mode=0
 
 [input]
 
