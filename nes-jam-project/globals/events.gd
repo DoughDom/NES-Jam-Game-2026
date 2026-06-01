@@ -1,3 +1,3 @@
 extends Node
 
-signal scene_changed
+signal sceneChanged
