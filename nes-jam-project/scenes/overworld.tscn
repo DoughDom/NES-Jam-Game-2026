@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://hydybbnr1b32" path="res://scenes/scenes_scripts/game_scene.gd" id="1_m1b5j"]
 [ext_resource type="Texture2D" uid="uid://b8rtm1p6dg8en" path="res://assets/grass tile.png" id="2_16ktt"]
 [ext_resource type="PackedScene" uid="uid://ddmf87rrlq80w" path="res://entities/player.tscn" id="3_u2ss0"]
+[ext_resource type="PackedScene" uid="uid://fre4q1535ltm" path="res://combat/battle_scene.tscn" id="4_356oe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_356oe"]
 texture = ExtResource("2_16ktt")
@@ -24,3 +25,6 @@ tile_set = SubResource("TileSet_3gvrs")
 
 [node name="Player" parent="." unique_id=1890182196 instance=ExtResource("3_u2ss0")]
 position = Vector2(16, 16)
+
+[node name="BattleScene" parent="." unique_id=467591585 instance=ExtResource("4_356oe")]
+visible = false
