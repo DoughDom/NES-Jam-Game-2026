@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SkillAction" format=3 uid="uid://cruyhqea21wxr"]
+
+[ext_resource type="Script" uid="uid://bj5s0t14w0rld" path="res://combat/battle_entities/actions/skill_action.gd" id="1_884rq"]
+
+[resource]
+script = ExtResource("1_884rq")
+skillName = "ExampleSkill1"
+description = "Does a Flip"
+power = 40
+metadata/_custom_type_script = "uid://bj5s0t14w0rld"
