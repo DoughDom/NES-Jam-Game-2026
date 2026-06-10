@@ -36,7 +36,7 @@ func _physics_process(delta):
 		movePlayer()
 	
 	
-	print(moving)
+	#print(moving)
 func controlPlayer():
 	if moving:
 		if Input.is_action_pressed("dpad_up"):
@@ -63,13 +63,16 @@ func controlPlayer():
 			idle = true
 		
 		
+		targetTile =  tilePos + movementDir
 		if objectLayer.get_cell_source_id(targetTile) != -1:
-			moveableTile = false
-		else:
-			moveableTile = true
+			targetTile =  tilePos
+			movementDir = Vector2i(0,0)
+			moving = false
+			idle = true
+			print_debug("bonk")
 		
 func movePlayer():
-
+	
 	position += Vector2(movementDir) * speed
 		
 	if Vector2i(position) == targetTile * 16:
