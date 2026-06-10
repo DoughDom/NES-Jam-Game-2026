@@ -64,6 +64,7 @@ texture = ExtResource("5_3gvrs")
 sources/0 = SubResource("TileSetAtlasSource_eab5i")
 
 [node name="Overworld" type="Node2D" unique_id=1078839567]
+texture_filter = 1
 script = ExtResource("1_m1b5j")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1756903158]
@@ -73,10 +74,12 @@ tile_set = SubResource("TileSet_3gvrs")
 
 [node name="Player" parent="." unique_id=1890182196 instance=ExtResource("3_u2ss0")]
 position = Vector2(16, 16)
+rotation = 6.2831855
 
 [node name="BattleScene" parent="." unique_id=467591585 instance=ExtResource("4_356oe")]
 visible = false
 
 [node name="ObjectsLayer" type="TileMapLayer" parent="." unique_id=1230484516]
+texture_filter = 1
 tile_map_data = PackedByteArray("AAACAAQAAAAEAAcAAAAFAAQAAAAEAAcAAAAGAAUAAAAEAAcAAAAHAAQAAAAEAAcAAAAHAAUAAAAEAAcAAAAHAAYAAAAEAAcAAAAIAAUAAAAEAAcAAAAGAAMAAAAEAAcAAAAGAAQAAAAEAAcAAAAIAAMAAAAEAAcAAAAIAAQAAAAEAAcAAAAJAAQAAAAEAAcAAAA=")
 tile_set = SubResource("TileSet_fkyvp")
