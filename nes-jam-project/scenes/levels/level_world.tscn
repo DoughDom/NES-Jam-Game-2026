@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://dyvvx3wbqawr6"]
 
-[ext_resource type="Texture2D" uid="uid://ga74jrx2vlmn" path="res://assets/visual_assets/tilesets/foliage_tileset.png" id="1_6hfjh"]
-[ext_resource type="Texture2D" uid="uid://dej6hxvr3x6yb" path="res://assets/visual_assets/tilesets/ground_tileset.png" id="2_cvhj7"]
+[ext_resource type="Texture2D" uid="uid://ga74jrx2vlmn" path="res://assets/visual_assets/tilesets/foliage_tileset_v0.png" id="1_6hfjh"]
+[ext_resource type="Texture2D" uid="uid://dej6hxvr3x6yb" path="res://assets/visual_assets/tilesets/ground_tileset_v0.png" id="2_cvhj7"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x4fyf"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ls1yl"]
 texture = ExtResource("2_cvhj7")
 0:0/0 = 0
 1:0/0 = 0
@@ -104,9 +104,9 @@ texture = ExtResource("2_cvhj7")
 8:11/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_vru8e"]
-sources/0 = SubResource("TileSetAtlasSource_x4fyf")
+sources/0 = SubResource("TileSetAtlasSource_ls1yl")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ls1yl"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xx7ag"]
 resource_name = "Foliage"
 texture = ExtResource("1_6hfjh")
 2:3/0 = 0
@@ -152,7 +152,7 @@ texture = ExtResource("1_6hfjh")
 6:11/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_xx7ag"]
-sources/1 = SubResource("TileSetAtlasSource_ls1yl")
+sources/1 = SubResource("TileSetAtlasSource_xx7ag")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6hfjh"]
 resource_name = "Foliage Collision"

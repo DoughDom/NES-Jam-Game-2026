@@ -3,7 +3,7 @@ class_name Player
 
 signal playerDead
 
-@export var speed:int = 1
+@export var speed:int = 2
 #pixels per frame
 
 var tilePos:Vector2i
@@ -41,6 +41,7 @@ func controlPlayer():
 	if moving:
 		if Input.is_action_pressed("dpad_up"):
 			bufferedDir = Vector2(0, -1)
+			
 		elif Input.is_action_pressed("dpad_down"):
 			bufferedDir = Vector2(0, 1)
 		elif Input.is_action_pressed("dpad_left"):
@@ -64,12 +65,12 @@ func controlPlayer():
 		
 		
 		targetTile =  tilePos + movementDir
-		if objectLayer.get_cell_source_id(targetTile) != -1:
-			targetTile =  tilePos
-			movementDir = Vector2i(0,0)
-			moving = false
-			idle = true
-			print_debug("bonk")
+		#if objectLayer.get_cell_source_id(targetTile) != -1:
+			#targetTile =  tilePos
+			#movementDir = Vector2i(0,0)
+			#moving = false
+			#idle = true
+			#print_debug("bonk")
 		
 func movePlayer():
 	
