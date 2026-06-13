@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxml7scl2ugir"
-path="res://.godot/imported/water_tileset.png-5317ca1226c63caeeccfc2fc5f46e17e.ctex"
+uid="uid://bi2yeamxfl0uo"
+path="res://.godot/imported/foliage_tileset.png-b9f3c6eeb2909f4eca251930dd3a252e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual_assets/water_tileset.png"
-dest_files=["res://.godot/imported/water_tileset.png-5317ca1226c63caeeccfc2fc5f46e17e.ctex"]
+source_file="res://assets/visual_assets/tilesets/foliage_tileset.png"
+dest_files=["res://.godot/imported/foliage_tileset.png-b9f3c6eeb2909f4eca251930dd3a252e.ctex"]
 
 [params]
 
