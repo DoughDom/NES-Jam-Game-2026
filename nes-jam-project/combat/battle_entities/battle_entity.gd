@@ -1,16 +1,14 @@
+@tool
 extends Node
-
-
 class_name BattleEntity
 
 @export var displayName: String
-@export var maxHp: int
-@export var baseAtk: int
-@export var baseDef: int
-@export var baseSpd: int 
-@export var gold_reward: int
+@export var stats: Stats
+@export var goldReward: int
 
 @export var isPlayer: bool
+
+var avatar: BattleAvatar
 
 var hp: int
 var atk: int
@@ -22,12 +20,21 @@ var skills: Array[BattleAction]
 var turnManager: TurnManager
 var interface: BattleInterface
 
+func _init(eName: String, eStats: Stats, eGoldReward: int, eIsPlayer: bool, eSkills: Array[BattleAction], eAvatar: BattleAvatar) -> void:
+	name = eName
+	stats = eStats
+	goldReward = eGoldReward
+	isPlayer = eIsPlayer
+	avatar = eAvatar
+	
+	skills.assign(eSkills)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	hp = maxHp
-	atk = baseAtk
-	def = baseDef
-	spd = baseSpd
+	hp = stats.maxHp
+	atk = stats.atk
+	def = stats.def
+	spd = stats.spd
 	
 	turnManager = get_parent()
 	pass # Replace with function body.
@@ -50,7 +57,10 @@ func executeAction(action: BattleAction, targets: Array[BattleEntity]) -> void:
 	await action.execute(self, targets)
 
 func takeDamage(damage: int, source: BattleEntity = null ) -> void:
+	
+	avatar.play("hurt")
 	hp -= damage
+	
 	return
 	
 func die() -> void:

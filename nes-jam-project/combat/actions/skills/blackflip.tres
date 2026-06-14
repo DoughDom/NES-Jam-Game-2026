@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillAction" format=3 uid="uid://cruyhqea21wxr"]
+
+[ext_resource type="Script" uid="uid://cyvytd2emcmv1" path="res://combat/actions/skill_effects/blackflip_effect.gd" id="1_8e5vi"]
+[ext_resource type="Script" uid="uid://bj5s0t14w0rld" path="res://combat/actions/skill_action.gd" id="2_mjoby"]
+
+[sub_resource type="Resource" id="Resource_fwac1"]
+script = ExtResource("1_8e5vi")
+metadata/_custom_type_script = "uid://cyvytd2emcmv1"
+
+[resource]
+script = ExtResource("2_mjoby")
+skillName = "Blackflip"
+description = "Does a Backflip that does damage"
+power = 40
+effect = SubResource("Resource_fwac1")
+metadata/_custom_type_script = "uid://bj5s0t14w0rld"

@@ -6,9 +6,10 @@ class_name SkillAction
 @export var skillName: String
 @export var description: String
 @export var power: int
+@export var effect: SkillEffect
 
 func execute(user: BattleEntity, targets : Array[BattleEntity]) -> void:
-	pass
+	effect.execute(user, targets)
 
-func canExecute() -> bool:
-	return true
+func canExecute(user: BattleEntity, roster: BattleRoster) -> bool:
+	return effect.canExecute(user, roster)

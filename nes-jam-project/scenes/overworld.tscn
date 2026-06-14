@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://hydybbnr1b32" path="res://scenes/scenes_scripts/game_scene.gd" id="1_m1b5j"]
 [ext_resource type="PackedScene" uid="uid://ddmf87rrlq80w" path="res://entities/player.tscn" id="3_u2ss0"]
+[ext_resource type="Texture2D" uid="uid://n4r6mqpc0a8r" path="res://assets/visual_assets/foliage_tileset.png" id="5_3gvrs"]
+[ext_resource type="Script" uid="uid://bnde2sxqo2xu4" path="res://scenes/combatHandler.gd" id="5_eab5i"]
 [ext_resource type="PackedScene" uid="uid://fre4q1535ltm" path="res://combat/battle_scene.tscn" id="4_356oe"]
 [ext_resource type="Texture2D" uid="uid://dkixgokcbor32" path="res://assets/visual_assets/tilesets/ground_tileset.png" id="4_qjxaj"]
 [ext_resource type="Texture2D" uid="uid://bi2yeamxfl0uo" path="res://assets/visual_assets/tilesets/foliage_tileset.png" id="5_e184d"]
@@ -602,6 +604,13 @@ tile_set = SubResource("TileSet_dbwep")
 [node name="Player" parent="." unique_id=1890182196 instance=ExtResource("3_u2ss0")]
 position = Vector2(16, 16)
 
+[node name="ObjectsLayer" type="TileMapLayer" parent="." unique_id=1230484516]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAACAAQAAAAEAAcAAAAFAAQAAAAEAAcAAAAGAAUAAAAEAAcAAAAHAAQAAAAEAAcAAAAHAAUAAAAEAAcAAAAHAAYAAAAEAAcAAAAIAAUAAAAEAAcAAAAGAAMAAAAEAAcAAAAGAAQAAAAEAAcAAAAIAAMAAAAEAAcAAAAIAAQAAAAEAAcAAAAJAAQAAAAEAAcAAAA=")
+tile_set = SubResource("TileSet_fkyvp")
+
+[node name="Combat" type="CanvasLayer" parent="." unique_id=342511210]
+script = ExtResource("5_eab5i")
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=801092278]
 
 [node name="foregroundFoliage" type="TileMapLayer" parent="." unique_id=1685317455]
