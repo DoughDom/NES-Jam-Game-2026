@@ -2,16 +2,28 @@
 
 [ext_resource type="Script" uid="uid://bsolmjbvkrff3" path="res://combat/battle_scene.gd" id="1_ksa6e"]
 [ext_resource type="Script" uid="uid://vsob8e5rjhoa" path="res://combat/userInterface.gd" id="2_ksa6e"]
+[ext_resource type="PackedScene" uid="uid://7qpdcs6ivty7" path="res://combat/tutorial_battle_scene.tscn" id="2_wumra"]
 [ext_resource type="Script" uid="uid://ckk0fjjdh3ihv" path="res://combat/turn_manager.gd" id="3_48tbd"]
+[ext_resource type="PackedScene" uid="uid://714etnjvpkqi" path="res://combat/farm_battle_scene.tscn" id="3_opijj"]
+[ext_resource type="PackedScene" uid="uid://bnuomfph2cnvx" path="res://combat/desert_battle_scene.tscn" id="4_1ud0x"]
+[ext_resource type="PackedScene" uid="uid://bfir84vlbx76b" path="res://combat/swamp_battle_scene.tscn" id="5_xpagi"]
 
 [node name="BattleScene" type="Node2D" unique_id=467591585]
 texture_filter = 1
 script = ExtResource("1_ksa6e")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=875226236]
-offset_right = 256.0
-offset_bottom = 224.0
-color = Color(0, 1, 0.63793015, 1)
+[node name="Backgrounds" type="Node2D" parent="." unique_id=339739221]
+
+[node name="tutorialBattleScene" parent="Backgrounds" unique_id=1975785305 instance=ExtResource("2_wumra")]
+visible = false
+
+[node name="farmBattleScene" parent="Backgrounds" unique_id=1803207817 instance=ExtResource("3_opijj")]
+visible = false
+
+[node name="desertBattleScene" parent="Backgrounds" unique_id=1404399905 instance=ExtResource("4_1ud0x")]
+
+[node name="swampBattleScene" parent="Backgrounds" unique_id=500099843 instance=ExtResource("5_xpagi")]
+visible = false
 
 [node name="Enemies" type="Node" parent="." unique_id=2045554787]
 
