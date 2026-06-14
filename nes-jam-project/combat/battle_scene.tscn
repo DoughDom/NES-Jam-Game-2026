@@ -21,6 +21,7 @@ visible = false
 visible = false
 
 [node name="desertBattleScene" parent="Backgrounds" unique_id=1404399905 instance=ExtResource("4_1ud0x")]
+visible = false
 
 [node name="swampBattleScene" parent="Backgrounds" unique_id=500099843 instance=ExtResource("5_xpagi")]
 visible = false
@@ -33,6 +34,7 @@ visible = false
 script = ExtResource("2_ksa6e")
 
 [node name="Control" type="Control" parent="BattleInterface" unique_id=211910585]
+visible = false
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
