@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bc1oe7ovxwy31"]
+
+[ext_resource type="Script" uid="uid://c5p3tnjkpuc4k" path="res://combat/battle_entities/battle_avatar.gd" id="1_4eoxf"]
+[ext_resource type="Texture2D" uid="uid://dci6lm5tb0q0b" path="res://combat/battle_entities/mouse/mouse_sprite.png" id="2_66wak"]
+
+[sub_resource type="Animation" id="Animation_jbbem"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8rxjc"]
+resource_name = "hurt"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5),
+"transitions": PackedFloat32Array(1e-05, 7.779324e-05, 1e-05, 7.779324e-05, 1e-05, 7.779324e-05, 1e-05, 7.779324e-05, 1e-05, 7.779324e-05),
+"update": 0,
+"values": [Color(4.2973084, 4.2973084, 4.2973084, 1), Color(1, 1, 1, 1), Color(4.2973084, 4.2973084, 4.2973084, 1), Color(1, 1, 1, 1), Color(4.2973084, 4.2973084, 4.2973084, 1), Color(1, 1, 1, 1), Color(4.2973084, 4.2973084, 4.2973084, 1), Color(1, 1, 1, 1), Color(4.2973084, 4.2973084, 4.2973084, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gsaw7"]
+_data = {
+&"RESET": SubResource("Animation_jbbem"),
+&"hurt": SubResource("Animation_8rxjc")
+}
+
+[node name="MouseAvatar" type="Marker2D" unique_id=1713137059]
+texture_filter = 1
+script = ExtResource("1_4eoxf")
+metadata/_custom_type_script = "uid://c5p3tnjkpuc4k"
+
+[node name="Center" type="Marker2D" parent="." unique_id=225840124]
+
+[node name="Sprite2D" type="Sprite2D" parent="Center" unique_id=1893545237]
+position = Vector2(0, -13)
+texture = ExtResource("2_66wak")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Center" unique_id=1719787321]
+libraries/ = SubResource("AnimationLibrary_gsaw7")
+
+[node name="Front" type="Marker2D" parent="." unique_id=22818809]
+position = Vector2(13, -13)

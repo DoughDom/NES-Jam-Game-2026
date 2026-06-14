@@ -19,7 +19,7 @@ enum TargetNumber {
 func execute(user: BattleEntity, targets : Array[BattleEntity]) -> void:
 	pass
 
-func getPossibleTargets(user: BattleEntity, roster : BattleRoster) -> Array[BattleEntity]:
+func getPossibleTargets(user: BattleEntity, roster: BattleRoster) -> Array[BattleEntity]:
 	match targetType:
 		TargetType.SELF:
 			return [user]
@@ -36,5 +36,5 @@ func getPossibleTargets(user: BattleEntity, roster : BattleRoster) -> Array[Batt
 		_:
 			return []
 
-func canExecute() -> bool:
+func canExecute(user: BattleEntity, roster: BattleRoster) -> bool:
 	return true
