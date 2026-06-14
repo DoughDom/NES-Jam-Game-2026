@@ -609,3 +609,4 @@ tile_map_data = PackedByteArray("AAARAO//AAAIAAYAAAASAO//AAAIAAYAAAATAO//AAAIAAY
 tile_set = SubResource("TileSet_eab5i")
 
 [node name="BattleScene" parent="." unique_id=467591585 instance=ExtResource("4_356oe")]
+position = Vector2(656, 368)
