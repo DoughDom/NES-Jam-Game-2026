@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://8n3daxyiuivr" path="res://scenes/scenes_scripts/fps.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bp7i7gf0soe7g" path="res://scenes/overworld.tscn" id="2_0wfyh"]
+[ext_resource type="AudioStream" uid="uid://hhbpakhtuqw6" path="res://Music/NES(main).wav" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://7twb0jg37p3c" path="res://Music/mainMusic.gd" id="3_tbgi4"]
+[ext_resource type="AudioStream" uid="uid://boca7ufn52fvs" path="res://Music/NES(main-loop).wav" id="4_jyhfs"]
 
 [node name="Main" type="Node" unique_id=416303771]
 script = ExtResource("1_ig7tw")
@@ -22,3 +25,13 @@ size = Vector2i(256, 224)
 render_target_update_mode = 4
 
 [node name="Overworld" parent="SubViewportContainer/SubViewport" unique_id=1078839567 instance=ExtResource("2_0wfyh")]
+
+[node name="AudioManager" type="Node" parent="." unique_id=1157456813]
+script = ExtResource("3_tbgi4")
+
+[node name="mainAudio" type="AudioStreamPlayer2D" parent="AudioManager" unique_id=866357649]
+stream = ExtResource("3_sugp2")
+autoplay = true
+
+[node name="mainAudioLoop" type="AudioStreamPlayer2D" parent="AudioManager" unique_id=436491492]
+stream = ExtResource("4_jyhfs")
