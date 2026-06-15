@@ -1,42 +1,70 @@
 @tool
-extends Node
+extends Node2D
 class_name BattleEntity
 
 @export var displayName: String
-@export var stats: Stats
-@export var goldReward: int
+@export var stats: Stats = null
 
 @export var isPlayer: bool
 
-var avatar: BattleAvatar
+@export var avatar: BattleAvatar = null
+@export var avatarScene: PackedScene:
+	set(value):
+		avatarScene = value
+		
+		if not is_inside_tree():
+			await ready
+		
+		if avatar:
+			avatar.queue_free()
+			avatar = null
+			
+		if avatarScene:
+			var newScene = avatarScene.instantiate()
+			
+			avatar = newScene as BattleAvatar
+			if !avatar:
+				push_warning("WTF dude that is NOT a valid avatarScene file... ",
+				"%s deserves way better than a scene like %s" % [name, newScene.name])
+				newScene.free()
+				avatarScene = null
+				return
+			
 
-var hp: int
-var atk: int
-var def: int
-var spd: int
 
-var skills: Array[BattleAction]
+
+@export var skills: Array[BattleAction]
+var basicAttack: AttackAction = AttackAction.new()
 
 var turnManager: TurnManager
 var interface: BattleInterface
 
-func _init(eName: String, eStats: Stats, eGoldReward: int, eIsPlayer: bool, eSkills: Array[BattleAction], eAvatar: BattleAvatar) -> void:
-	name = eName
-	stats = eStats
-	goldReward = eGoldReward
-	isPlayer = eIsPlayer
-	avatar = eAvatar
+func _init(
+	eName: String, 
+	eStats: Stats, 
+	eIsPlayer: bool, 
+	eSkills: Array[BattleAction], 
+	eAvatarScene: PackedScene) -> void:
 	
+	if eStats:
+		stats = eStats.duplicate()
+	else:
+		push_warning("Entity %s was not given a stats object! Using default stats" % [displayName])
+		stats = stats.new()
+		
+	displayName = eName
+	
+	isPlayer = eIsPlayer
+	avatarScene = eAvatarScene
 	skills.assign(eSkills)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	hp = stats.maxHp
-	atk = stats.atk
-	def = stats.def
-	spd = stats.spd
 	
 	turnManager = get_parent()
+	stats = stats.duplicate()
+	interface = turnManager.get_parent().find_child("BattleInterface") as BattleInterface
+	
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -46,9 +74,12 @@ func _process(delta: float) -> void:
 func takeTurn(roster: BattleRoster) -> void:
 	var action: BattleAction
 	var targets: Array[BattleEntity]
-	interface.openBattleMenu(self)
-	await interface.selection_complete
-	
+	if (isPlayer):
+		interface.openBattleMenu(self)
+		await interface.selection_complete
+	else:
+		action = basicAttack
+		targets = roster.players
 	
 	await action.execute(self, targets)
 
@@ -59,7 +90,7 @@ func executeAction(action: BattleAction, targets: Array[BattleEntity]) -> void:
 func takeDamage(damage: int, source: BattleEntity = null ) -> void:
 	
 	avatar.play("hurt")
-	hp -= damage
+	stats.hp -= damage
 	
 	return
 	

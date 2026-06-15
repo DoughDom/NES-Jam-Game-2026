@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://w03aiw8wus63"]
+
+[ext_resource type="Script" uid="uid://b8n6n1f5y0lbs" path="res://combat/ui/formless_menu.gd" id="1_h3qlw"]
+[ext_resource type="PackedScene" uid="uid://lqr7uhccx2pl" path="res://ui/battleCursor.tscn" id="2_k3jcc"]
+
+[node name="FormlessMenu" type="Control" unique_id=1056840201]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_h3qlw")
+metadata/_custom_type_script = "uid://dolr8yuonb6se"
+
+[node name="BattleCursor" parent="." unique_id=673957687 instance=ExtResource("2_k3jcc")]

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Stats" format=3 uid="uid://bkebtlvy8g32s"]
+
+[ext_resource type="Script" uid="uid://d14rp0ng0yf11" path="res://combat/stats.gd" id="1_sfugb"]
+
+[resource]
+script = ExtResource("1_sfugb")
+baseMaxHp = 100
+metadata/_custom_type_script = "uid://d14rp0ng0yf11"

@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://hvv71rqyt6sr"]
+
+[ext_resource type="FontFile" uid="uid://bqdpbpjpm7j46" path="res://assets/fonts/at01.ttf" id="1_8edew"]
+[ext_resource type="Script" uid="uid://c1b1x7ecmlr86" path="res://ui/battle_menu.gd" id="1_tav8h"]
+[ext_resource type="Texture2D" uid="uid://baq5m7ffgu5l6" path="res://assets/visual_assets/battle_menu_texture.png" id="2_airaw"]
+[ext_resource type="PackedScene" uid="uid://lqr7uhccx2pl" path="res://ui/battleCursor.tscn" id="3_8edew"]
+[ext_resource type="PackedScene" uid="uid://dnghq06f4i23t" path="res://ui/skill_menu.tscn" id="3_jx1tp"]
+[ext_resource type="PackedScene" uid="uid://bvobuikjiaphh" path="res://ui/item_menu.tscn" id="4_myurw"]
+
+[sub_resource type="Theme" id="Theme_y5xqb"]
+default_font = ExtResource("1_8edew")
+
+[node name="BattleMenu" type="Control" unique_id=1247501820]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+size_flags_vertical = 0
+theme = SubResource("Theme_y5xqb")
+script = ExtResource("1_tav8h")
+skillMenuScene = ExtResource("3_jx1tp")
+itemMenuScene = ExtResource("4_myurw")
+entries = Array[String](["FIGHT", "BAG", "SKILL", "RUN"])
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1234788405]
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 53.0
+texture = ExtResource("2_airaw")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect" unique_id=2006839257]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 128.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer" unique_id=1969197271]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="BattleCursor" parent="NinePatchRect" unique_id=673957687 instance=ExtResource("3_8edew")]
+position = Vector2(9, 10)

@@ -3,16 +3,15 @@ class_name Enemy
 
 @export var name: String
 @export var stats: Stats
-@export var avatar: PackedScene
+@export var avatarScene: PackedScene
 @export var skills: Array[BattleAction]
-
+@export var goldReward: int
 
 func instantiate() -> BattleEntity:
 	return BattleEntity.new(
 		name,
 		stats,
-		15,
 		false,
 		skills,
-		avatar.instantiate()
+		avatarScene
 	)
