@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Events="*uid://cawmaakqnw1gb"
+PlayerInfo="*uid://do3oillmch1ig"
 
 [display]
 

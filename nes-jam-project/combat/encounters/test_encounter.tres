@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Encounter" format=3 uid="uid://blb8nqf5kjd2o"]
+
+[ext_resource type="Script" uid="uid://bhcpmn7x4bw0v" path="res://combat/encounters/encounter.gd" id="1_i4f3j"]
+[ext_resource type="Script" uid="uid://b11p6di7r4bav" path="res://combat/encounters/enemy.gd" id="1_kggyv"]
+[ext_resource type="Resource" uid="uid://drdf6ai40for3" path="res://combat/encounters/enemies/scorpion.tres" id="2_mlgxr"]
+
+[resource]
+script = ExtResource("1_i4f3j")
+enemies = Array[ExtResource("1_kggyv")]([ExtResource("2_mlgxr"), ExtResource("2_mlgxr"), ExtResource("2_mlgxr"), ExtResource("2_mlgxr"), ExtResource("2_mlgxr")])
+metadata/_custom_type_script = "uid://bhcpmn7x4bw0v"
