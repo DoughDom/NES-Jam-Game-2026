@@ -8,16 +8,12 @@
 
 [sub_resource type="Resource" id="Resource_4dsvg"]
 script = ExtResource("3_yrcxh")
-maxHp = 100
-atk = 50
-def = 50
-spd = 50
 metadata/_custom_type_script = "uid://d14rp0ng0yf11"
 
 [resource]
 script = ExtResource("1_p7mde")
 name = "Scorpion"
 stats = SubResource("Resource_4dsvg")
-avatar = ExtResource("1_bg7j3")
+avatarScene = ExtResource("1_bg7j3")
 skills = Array[ExtResource("3_a04cp")]([ExtResource("4_4dsvg")])
 metadata/_custom_type_script = "uid://b11p6di7r4bav"

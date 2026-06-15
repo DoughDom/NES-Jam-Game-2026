@@ -1,6 +1,7 @@
 extends Node
-
 class_name TurnManager
+
+signal combatFinished(playerVictory: bool)
 
 var roster : BattleRoster
 
@@ -12,7 +13,7 @@ var turnOrder: Array[BattleEntity]
 var turnQueue: Array[BattleEntity]
 var roundCounter: int
 
-func _ready() -> void:
+func initialize() -> void:
 	var players: Array[BattleEntity]
 	var enemies: Array[BattleEntity]
 	players.assign(
@@ -29,18 +30,23 @@ func _ready() -> void:
 	for child in get_children():
 		turnOrder.append(child)
 	
-	turnQueue = turnOrder
-	roundCounter = 1
+	turnQueue.assign(turnOrder)
+	roundCounter = 0
 	
+	start()
+	
+	
+
+func start() -> void:
 	playRound()
 
-
 func playRound() -> void:
-	while (!turnQueue.is_empty()):
-		activeFighter = turnQueue.pop_front()
-		activeFighter.takeTurn(roster)
-		
 	
 	
 	roundCounter += 1
+	while (!turnQueue.is_empty()):
+		activeFighter = turnQueue.pop_front()
+		await activeFighter.takeTurn(roster)
 	
+	if(true == false):
+		playRound()

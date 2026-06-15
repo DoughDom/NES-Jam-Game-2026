@@ -1,4 +1,5 @@
 extends Node
 
 signal sceneChanged
-signal combatTriggered
+signal combatTriggered(encounter: Encounter)
+signal combatFinished(isPlayerVictor: bool)

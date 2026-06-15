@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bsdddyaiy0aky"]
+
+[ext_resource type="FontFile" uid="uid://bqdpbpjpm7j46" path="res://assets/fonts/at01.ttf" id="1_koi3w"]
+[ext_resource type="Texture2D" uid="uid://cr72pkvybeq3y" path="res://assets/visual_assets/battle_button_texture.png" id="2_1jv83"]
+[ext_resource type="Script" uid="uid://c85ltcnafo750" path="res://combat/ui/battle_button.gd" id="3_f1lkr"]
+
+[sub_resource type="Theme" id="Theme_3h3x5"]
+default_font = ExtResource("1_koi3w")
+
+[sub_resource type="LabelSettings" id="LabelSettings_3h3x5"]
+font = ExtResource("1_koi3w")
+font_color = Color(0, 0.9882353, 0.9882353, 1)
+shadow_size = 0
+
+[node name="BattleButton" type="TextureButton" unique_id=831471254]
+texture_filter = 1
+offset_right = 64.0
+offset_bottom = 16.0
+theme = SubResource("Theme_3h3x5")
+texture_normal = ExtResource("2_1jv83")
+script = ExtResource("3_f1lkr")
+
+[node name="CursorAnchor" type="Marker2D" parent="." unique_id=270967897]
+position = Vector2(-8, 8)
+
+[node name="Label" type="Label" parent="." unique_id=1308314708]
+texture_filter = 1
+layout_mode = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 59.685
+offset_bottom = 14.000001
+label_settings = SubResource("LabelSettings_3h3x5")
