@@ -3,7 +3,7 @@ class_name Player
 
 signal playerDead
 
-@export var speed:int = 2
+@export var speed:int = 8
 #pixels per frame
 
 var tilePos:Vector2i
@@ -14,8 +14,13 @@ var controllable:bool = true
 var idle:bool = true
 var moving:bool = false
 var moveableTile:bool = true
+var canSwim:bool = false
+var hasFeather:bool = false
+var hasClaw:bool = false
+
 #sets the var objectLayer to the specficed TileMap that has impassable objects
-@onready var objectLayer: TileMapLayer = $"../ObjectsLayer"
+@onready var objectLayer: TileMapLayer = $"../objectLayer"
+@onready var swimmable: TileMapLayer = $"../swimLayer"
 
 
 func _ready():
@@ -26,7 +31,6 @@ func _ready():
 	bufferedDir.y = 0
 	idle = true
 	controllable = true
-	print("objectLayer =", objectLayer)
 	
 func _physics_process(delta):
 	
@@ -65,12 +69,20 @@ func controlPlayer():
 		
 		
 		targetTile =  tilePos + movementDir
-		#if objectLayer.get_cell_source_id(targetTile) != -1:
-			#targetTile =  tilePos
-			#movementDir = Vector2i(0,0)
-			#moving = false
-			#idle = true
-			#print_debug("bonk")
+		if objectLayer.get_cell_source_id(targetTile) != -1:
+			targetTile =  tilePos
+			movementDir = Vector2i(0,0)
+			moving = false
+			idle = true
+			print_debug("bonk")
+			
+		if swimmable.get_cell_source_id(targetTile) != -1 && canSwim==false:
+			targetTile =  tilePos
+			movementDir = Vector2i(0,0)
+			moving = false
+			idle = true
+			print_debug("bonk")
+			
 		
 func movePlayer():
 	
