@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dkixgokcbor32" path="res://assets/visual_assets/tilesets/ground_tileset.png" id="4_qjxaj"]
 [ext_resource type="Texture2D" uid="uid://bi2yeamxfl0uo" path="res://assets/visual_assets/tilesets/foliage_tileset.png" id="5_e184d"]
 [ext_resource type="Script" uid="uid://bnde2sxqo2xu4" path="res://scenes/combatHandler.gd" id="5_eab5i"]
+[ext_resource type="Texture2D" uid="uid://doibjd2ts3skm" path="res://assets/visual_assets/tilesets/allCharacters.png" id="5_qjxaj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lsky2"]
 resource_name = "Ground"
@@ -551,6 +552,44 @@ texture = ExtResource("4_fkyvp")
 [sub_resource type="TileSet" id="TileSet_e184d"]
 sources/0 = SubResource("TileSetAtlasSource_qjxaj")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nesqq"]
+texture = ExtResource("5_qjxaj")
+5:11/0 = 0
+6:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+14:14/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_lsky2"]
+sources/0 = SubResource("TileSetAtlasSource_nesqq")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3gvrs"]
 texture = ExtResource("5_e184d")
 1:5/0 = 0
@@ -650,8 +689,12 @@ tile_map_data = PackedByteArray("AAABAPL/AAAEAAwAAAABAPD/AAAFAAoAAAAHAO//AAAEAAw
 tile_set = SubResource("TileSet_dbwep")
 
 [node name="villageLayer" type="TileMapLayer" parent="." unique_id=959011339]
-tile_map_data = PackedByteArray("AAACAPP/AAAAAAcAAAACAPT/AAAAAAgAAAACAPX/AAAAAAkAAAADAPP/AAABAAcAAAADAPT/AAABAAgAAAADAPX/AAABAAkAAAAMAPX/AAADAAgAAAAMAPb/AAADAAkAAAANAPX/AAAEAAgAAAANAPb/AAAEAAkAAAADAPv/AAAFAAgAAAADAPz/AAAFAAkAAAAEAPv/AAAGAAgAAAAEAPz/AAAGAAkAAAALAPr/AAAIAAcAAAALAPv/AAAIAAgAAAALAPz/AAAIAAkAAAAMAPr/AAAJAAcAAAAMAPv/AAAJAAgAAAAMAPz/AAAJAAkAAAAJAPL/AAABAAQAAAAEAP3/AAAAAAUAAAAEAP7/AAAAAAYAAAACAPf/AAAAAAQAAAAIAPf/AAABAAUAAAAIAPj/AAABAAYAAAA=")
+tile_map_data = PackedByteArray("AAACAPP/AAAAAAcAAAACAPT/AAAAAAgAAAACAPX/AAAAAAkAAAADAPP/AAABAAcAAAADAPT/AAABAAgAAAADAPX/AAABAAkAAAAMAPX/AAADAAgAAAAMAPb/AAADAAkAAAANAPX/AAAEAAgAAAANAPb/AAAEAAkAAAADAPv/AAAFAAgAAAADAPz/AAAFAAkAAAAEAPv/AAAGAAgAAAAEAPz/AAAGAAkAAAALAPr/AAAIAAcAAAALAPv/AAAIAAgAAAALAPz/AAAIAAkAAAAMAPr/AAAJAAcAAAAMAPv/AAAJAAgAAAAMAPz/AAAJAAkAAAAJAPL/AAABAAQAAAACAPf/AAAAAAQAAAAEAP3/AAABAAUAAAAEAP7/AAABAAYAAAAIAPf/AAAAAAUAAAAIAPj/AAAAAAYAAAA=")
 tile_set = SubResource("TileSet_e184d")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1204300476]
+tile_map_data = PackedByteArray("AABdAPH/AAAAAAwAAABdAPL/AAAAAA0AAABdAPP/AAAAAA4AAABeAPH/AAABAAwAAABeAPL/AAABAA0AAABeAPP/AAABAA4AAABfAPH/AAACAAwAAABfAPL/AAACAA0AAABfAPP/AAACAA4AAABdAPj/AAAEAA0AAABdAPn/AAAEAA4AAABeAPj/AAAFAA0AAABeAPn/AAAFAA4AAAAJAKX/AAAFAAsAAAAJAKb/AAAFAAwAAAAKAKX/AAAGAAsAAAAKAKb/AAAGAAwAAACq//v/AAAKAA0AAACq//z/AAAKAA4AAACr//v/AAALAA0AAACr//z/AAALAA4AAAA=")
+tile_set = SubResource("TileSet_lsky2")
 
 [node name="Player" parent="." unique_id=1890182196 instance=ExtResource("3_u2ss0")]
 position = Vector2(16, 16)
