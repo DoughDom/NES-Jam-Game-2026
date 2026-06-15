@@ -8,6 +8,9 @@ var _cachedActions: = {}
 var _activeAction: BattleAction = null  
 
 var activeFighter: BattleEntity
+var turnOrder: Array[BattleEntity]
+var turnQueue: Array[BattleEntity]
+var roundCounter: int
 
 func _ready() -> void:
 	var players: Array[BattleEntity]
@@ -23,10 +26,21 @@ func _ready() -> void:
 		)
 	)
 	roster = BattleRoster.new(players, enemies)
-	activeFighter = get_child(0)
-
-
-func playTurn() -> void:
+	for child in get_children():
+		turnOrder.append(child)
 	
-	playTurn()
+	turnQueue = turnOrder
+	roundCounter = 1
+	
+	playRound()
+
+
+func playRound() -> void:
+	while (!turnQueue.is_empty()):
+		activeFighter = turnQueue.pop_front()
+		activeFighter.takeTurn(roster)
+		
+	
+	
+	roundCounter += 1
 	
