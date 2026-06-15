@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bvobuikjiaphh"]
+
+[ext_resource type="Script" uid="uid://c8pt7hgjqkd0r" path="res://ui/item_menu.gd" id="1_xv3ax"]
+[ext_resource type="Texture2D" uid="uid://baq5m7ffgu5l6" path="res://assets/visual_assets/battle_menu_texture.png" id="2_sq0qv"]
+[ext_resource type="PackedScene" uid="uid://lqr7uhccx2pl" path="res://ui/battleCursor.tscn" id="3_dgllf"]
+
+[node name="ItemMenu" type="Control" unique_id=1959504922]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xv3ax")
+metadata/_custom_type_script = "uid://dolr8yuonb6se"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1967901471]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 53.0
+texture = ExtResource("2_sq0qv")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect" unique_id=2107854461]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 128.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer" unique_id=663043942]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="BattleCursor" parent="NinePatchRect" unique_id=673957687 instance=ExtResource("3_dgllf")]
+position = Vector2(9, 10)

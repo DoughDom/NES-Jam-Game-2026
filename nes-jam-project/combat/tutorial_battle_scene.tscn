@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://fre4q1535ltm"]
+
+[ext_resource type="Script" uid="uid://bsolmjbvkrff3" path="res://combat/battle_scene.gd" id="1_i1yw5"]
+[ext_resource type="PackedScene" uid="uid://7qpdcs6ivty7" path="res://combat/tutorial_battle_background.tscn" id="2_7hb6m"]
+[ext_resource type="Script" uid="uid://vsob8e5rjhoa" path="res://combat/userInterface.gd" id="2_v5qbb"]
+[ext_resource type="Script" uid="uid://ckk0fjjdh3ihv" path="res://combat/turn_manager.gd" id="3_7hb6m"]
+[ext_resource type="FontFile" uid="uid://bqdpbpjpm7j46" path="res://assets/fonts/at01.ttf" id="4_7hb6m"]
+[ext_resource type="PackedScene" uid="uid://w03aiw8wus63" path="res://combat/ui/formless_menu.tscn" id="5_usvmg"]
+[ext_resource type="PackedScene" uid="uid://hvv71rqyt6sr" path="res://ui/battle_menu.tscn" id="6_usvmg"]
+
+[sub_resource type="Theme" id="Theme_t55v4"]
+default_font = ExtResource("4_7hb6m")
+default_font_size = 16
+
+[node name="TutorialBattleScene" type="Node2D" unique_id=467591585]
+texture_filter = 1
+script = ExtResource("1_i1yw5")
+
+[node name="Backgrounds" type="Node2D" parent="." unique_id=339739221]
+
+[node name="tutorialBattleScene" parent="Backgrounds" unique_id=1975785305 instance=ExtResource("2_7hb6m")]
+
+[node name="Enemies" type="Node" parent="." unique_id=2045554787]
+
+[node name="Party" type="Node" parent="." unique_id=543745913]
+
+[node name="BattleInterface" type="CanvasLayer" parent="." unique_id=259709130]
+layer = 5
+script = ExtResource("2_v5qbb")
+battleMenuScene = ExtResource("6_usvmg")
+formlessMenuScene = ExtResource("5_usvmg")
+
+[node name="Menus" type="Control" parent="BattleInterface" unique_id=211910585]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_top = -16.0
+offset_right = 40.0
+offset_bottom = 24.0
+theme = SubResource("Theme_t55v4")
+
+[node name="BattleMenuAnchor" type="Control" parent="BattleInterface/Menus" unique_id=1025655934]
+anchors_preset = 0
+offset_left = 80.0
+offset_top = 47.0
+offset_right = 120.0
+offset_bottom = 87.0
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleInterface/Menus" unique_id=1607529602]
+visible = false
+layout_mode = 0
+offset_left = 176.0
+offset_top = 175.0
+offset_right = 251.0
+offset_bottom = 221.0
+
+[node name="GridContainer" type="GridContainer" parent="BattleInterface/Menus/MarginContainer" unique_id=2080932758]
+texture_filter = 1
+layout_mode = 2
+columns = 2
+
+[node name="Button" type="Button" parent="BattleInterface/Menus/MarginContainer/GridContainer" unique_id=1087396606]
+layout_mode = 2
+text = "RUN"
+
+[node name="Button2" type="Button" parent="BattleInterface/Menus/MarginContainer/GridContainer" unique_id=399548500]
+layout_mode = 2
+text = "Bag"
+
+[node name="Button3" type="Button" parent="BattleInterface/Menus/MarginContainer/GridContainer" unique_id=879163302]
+layout_mode = 2
+text = "Pokemon"
+
+[node name="Button4" type="Button" parent="BattleInterface/Menus/MarginContainer/GridContainer" unique_id=377336008]
+layout_mode = 2
+text = "Run"
+
+[node name="TurnManager" type="Node" parent="." unique_id=728659860]
+script = ExtResource("3_7hb6m")

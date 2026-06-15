@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://j4aa7d1504wu"]
+[gd_scene format=3 uid="uid://bkhfsr46d2oov"]
 
-[ext_resource type="Script" uid="uid://c6cji3kmhsjq1" path="res://entities/entities_scripts/battle_entity.gd" id="1_rwrnl"]
+[ext_resource type="Script" path="res://entities/entities_scripts/battle_entity.gd" id="1_rwrnl"]
 
 [node name="BattleEntity" type="Node2D" unique_id=1425080681]
 script = ExtResource("1_rwrnl")

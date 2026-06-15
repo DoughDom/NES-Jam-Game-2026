@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dimu0i1sgdu21"]
+
+[ext_resource type="PackedScene" uid="uid://lqr7uhccx2pl" path="res://ui/battleCursor.tscn" id="1_2a1ff"]
+[ext_resource type="Script" uid="uid://dred548yhlemy" path="res://combat/ui/list_battle_menu.gd" id="1_rxlvm"]
+
+[node name="ListBattleMenu" type="VBoxContainer" unique_id=1962967447]
+script = ExtResource("1_rxlvm")
+
+[node name="BattleCursor" parent="." unique_id=673957687 instance=ExtResource("1_2a1ff")]
